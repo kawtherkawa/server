@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "node js express",
+  "main": "index.js",
+  "scripts": {
+    "front": "cd ..  && cd client && npm start",
+    "back": "nodemon server",
+    "dev": "concurrently \"npm run back\" \"npm run front\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "mern project"
+  },
+  "author": "kawther",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "jsonwebtoken": "^9.0.0",
+    "nodemailer": "^6.9.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.1",
+    "nodemon": "^2.0.21"
+  }
+}
