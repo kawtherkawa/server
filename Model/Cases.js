@@ -5,7 +5,7 @@ const casesSchema=new schema({
         type: Number,   /*عدد القضية*/ 
     },
     
-    casesSubjet : {
+    casesSubject : {
         type: String,/* موضوع */ 
     },
 

@@ -29,6 +29,7 @@ exports.register = async (req, res) => {
       password,
       position,
       phone,
+      isAdmin
     } = req.body;
     const foundUser = await User.findOne({ email });
 
@@ -48,6 +49,7 @@ exports.register = async (req, res) => {
       password: hashedPassword,
       position,
       phone,
+      isAdmin
     });
 
     //save
@@ -148,3 +150,17 @@ exports.getOneUser = async (req, res) => {
     res.status(400).send({ msg: "fail to get user ", error });
   }
 };
+
+exports.deleteUser=async(req,res)=>{
+
+
+    try{
+        const {_id}=req.params;
+        await User.findOneAndDelete({_id})
+        res.status(200).send({msg: "user deleted"})
+    } catch(error){
+        res.status(400).send({msg:"can not deleted this user",error}) 
+    }
+  
+
+}

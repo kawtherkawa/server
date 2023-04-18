@@ -33,18 +33,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/sendemail", async (req, res) => {
-  const { email } = req.body;
+  const { name,email,phone,message } = req.body;
 
   try {
     const send_to = email;
     const sent_from = process.env.EMAIL_USER;
     const reply_to = email;
-    const subject = "Thank You Message From NodeCourse";
-    const message = `
-        <h3>Hello Zino</h3>
-        <p>Thank for your YouTube Tutorials</p>
-        <p>Regards...</p>
-    `;
+    const subject =` Message from ${name}: ${phone} `;
+  
 
     await sendEmail(subject, message, send_to, sent_from, reply_to);
     res.status(200).json({ success: true, message: "Email Sent" });

@@ -41,7 +41,9 @@ const UserSchema = new Schema({
     type: String
   },
 
-  phone: Number,
+  phone: {type:Number},
+
+  isAdmin:{ type : Boolean  }
 });
 
 module.exports = User = model("user", UserSchema);

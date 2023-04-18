@@ -11,9 +11,9 @@ casesKhassim*/
 
 router.post("/addCases",async(req,res)=>{
     try{
-const {casesNumber,casesSubjet,casesEtat,casesDate ,casesClient,casesTribunal,casesDatePublication,casesDecision,
+const {casesNumber,casesSubject,casesEtat,casesDate ,casesClient,casesTribunal,casesDatePublication,casesDecision,
     casesKhassim}=req.body
-const newCases= new Cases({casesNumber,casesSubjet,casesEtat,casesDate ,casesClient,casesTribunal,casesDatePublication,casesDecision,
+const newCases= new Cases({casesNumber,casesSubject,casesEtat,casesDate ,casesClient,casesTribunal,casesDatePublication,casesDecision,
     casesKhassim})
 await newCases.save()
 res.status(200).send({msg: "cases added",newCases})

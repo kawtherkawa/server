@@ -1,5 +1,5 @@
 const express = require ("express")
-const { register, login, updateInfoUser, getOneUser, getUsers } = require("../controllers/user")
+const { register, login, updateInfoUser, getOneUser, getUsers, deleteUser } = require("../controllers/user")
 const isAuth = require("../middelwares/isAuth")
 const { registerValidator, loginValidator, validation } = require("../middelwares/Validator")
 
@@ -18,5 +18,5 @@ router.put('/:_id', validation, updateInfoUser)
 
 router.get('/:_id',getOneUser) 
 router.get('/all/Users',getUsers)  
-
+router.delete('/:_id',deleteUser)
 module.exports = router
