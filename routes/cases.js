@@ -3,6 +3,7 @@ const router=express.Router();
 const Cases=require("../Model/Cases")
 
 router.get("/test",(req,res)=>{
+    
     res.send("hello gestion avocat") 
     })
 /* casesNumber,casesSubjet,casesEtat,casesDate,casesClient,casesTribunal,casesDatePublication,casesDecision,
